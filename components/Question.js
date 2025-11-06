@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Image, StyleSheet } from "react-native";
-import RNPickerSelect from "react-native-picker-select";
+import { Picker } from "@react-native-picker/picker";
 
 export default function Question({
   index,
@@ -18,16 +18,12 @@ export default function Question({
   return (
     <View style={styles.card}>
       <Image source={question.photo} style={styles.image} />
-      <RNPickerSelect
-        value={userAns}
-        onValueChange={handleValueChange}
-        items={[
-          ...question.options.map((option) => ({
-            label: option,
-            value: option,
-          })),
-        ]}
-      />
+      {/*Each Question have different answer options*/}
+      <Picker value={userAns} onValueChange={handleValueChange}>
+        {question.options.map((element) => (
+          <Picker.Item label={element} value={element} />
+        ))}
+      </Picker>
     </View>
   );
 }

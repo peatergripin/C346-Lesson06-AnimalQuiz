@@ -7,6 +7,7 @@ import {
   Button,
   StatusBar,
   View,
+  TouchableOpacity,
 } from "react-native";
 import Question from "./components/Question";
 import animalData from "./animalData";
@@ -44,12 +45,11 @@ export default function App() {
           }
         />
       ))}
-      {/*Array.prototype.some checks for the existance of one element that satisfy the f(x) provided as its arg*/}
-      <Button
-        title="Submit Answers"
-        onPress={handleSubmit}
-        disabled={animalData.some((element, index) => !answers[index])}
-      />
+      <TouchableOpacity onPress={handleSubmit} style={styles.buttonContainer}>
+        <View style={styles.submitButton}>
+          <Text style={styles.buttonText}>Submit Answers</Text>
+        </View>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </ScrollView>
   );
@@ -62,5 +62,21 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 10,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  submitButton: {
+    backgroundColor: "lightcoral",
+    borderRadius: 5,
+    width: "40%",
+    paddingVertical: 5,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
