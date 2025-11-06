@@ -20,8 +20,8 @@ Lessons 5 & 6 taught us on several Components that can be used in react native s
 ![App Demo](./media/demo.gif)
 
 <p align="center">
-  <img src="./assets/img/screenshot1.png" width="180" alt="Screenshot1" />
-  <img src="./assets/img/screenshot2.png" width="180" alt="Screenshot2" />
+  <img src="./img/screenshot1.png" width="180" alt="Screenshot1" />
+  <img src="./img/screenshot2.png" width="180" alt="Screenshot2" />
 </p>
 
 ---
